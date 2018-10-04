@@ -1,0 +1,344 @@
+
+
+// ------------------------------------------------------//
+// CSS IMPORTS 
+// ------------------------------------------------------//
+
+@import url("normalize.css")
+@import url("foundation.css")
+@import url("owl-carousel.css")
+@import url("owl.transitions.css")
+@import url("animate.css")
+@import url("tyger-fonts.css")
+@import url("navigation.css")
+@import url("cubeportfolio.css")
+@import url("layout.css") 
+
+
+
+// ------------------------------------------------------//
+// FURTHER CUSTOMIZATION
+// ------------------------------------------------------//
+
+// fonts 
+@font-face 
+    font-family: 'bignoodletitlingregular'
+    src: url('../fonts/big_noodle_titling-webfont.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+
+// Variables
+$main-theme: #3c6382
+
+
+/* header */
+header 
+    /* height of header banner,  */
+    background-color: #fff
+
+    /* main logo */
+    #main-logo 
+        height: 40px
+        width: 40px
+        display: inline
+
+    #main-title 
+        margin-top: 15px
+        transform: scale(1.2)
+        display: inline
+
+        .cls-1
+            fill: #1A1A1A
+
+    /* navlist adjustment */
+    .nav-list 
+        margin-top: 11px
+
+        /* navlist elements */
+        .menu-list li a 
+            color: #1A1A1A
+            font-size: 18px
+
+        // social media icons 
+
+        .social-media 
+            height: 20px 
+            width: 20px
+            cursor: pointer
+            margin: 0 10px
+            transition: all 300ms ease-in 
+            transform: translateY(-5px)
+            z-index: 2
+
+            &:hover 
+                fill: $main-theme
+
+    
+    /* Mobile */
+
+    .show-for-devices > li
+        transition: all 400ms ease-in-out
+        background-color: #fff
+        opacity: 1
+        animation: mobile-nav 400ms ease-in-out forwards 
+
+        &:last-child
+            margin-bottom: 10px
+
+    .tyger-navicon
+        color: #1A1A1A
+
+
+header.shrink 
+    background-color: #fff 
+    border-bottom: 1px solid #ccc
+
+    .menu-toggle-button
+        border: none
+
+// Special Fonts 
+
+
+#slider 
+    p.lead 
+        font-family: '微软雅黑', sans-serif
+
+.section-desc 
+    h4, p 
+        font-family: '微软雅黑', sans-serif
+
+span.english-desc 
+    font-family: 'bignoodletitlingregular', sans-serif
+    font-size: 24px 
+
+///// MAIN SECTIONS /////
+
+
+// Landing Page
+#slider 
+    .slider-caption
+        h2
+            font-size: 69px
+        p 
+            font-size: 20px
+
+#wrapper
+
+    // /* About */
+    // section#about 
+    //     background-color: #1A1A1A
+
+    //     .section-desc 
+    //         h4, p
+    //             color: #ddd
+
+
+    /* Projects */
+
+    section#services 
+        background-color: #1A1A1A
+
+        .section-desc
+            h4, p
+                color: #ddd
+                font-family: '微软雅黑', sans-serif
+            h4 
+                font-size: 18px
+            p 
+                font-size: 16px
+                
+        .service
+            i 
+                color: #ddd 
+                margin-bottom: 15px
+            h5, p 
+                color: #ddd
+            h5    
+                font-family: 'bignoodletitlingregular', sans-serif
+                font-size: 24px
+                 
+            p  
+                font-family: '微软雅黑', sans-serif
+                font-size: 18px
+        
+        // main services showcase
+        .services-main 
+            display: block
+            padding-left: 20px
+            text-align: center
+            animation: slide-out 400ms ease-in-out forwards
+            
+            .columns 
+                display: flex 
+                justify-content: center
+        
+        // hidden services showcase
+        .services-container 
+            display: none
+            margin-top: 50px
+            text-align: center
+            transition: 300ms ease-in
+
+            &.active 
+                animation: slide-out 600ms ease-in-out forwards 
+                display: block
+                transition: 300ms ease-in
+            &.close 
+                animation: slide-in 600ms ease-in-out forwards 
+                display: none
+                transition: 300ms ease-in
+
+            .columns 
+                display: flex 
+                justify-content: center 
+
+
+        .cbp-item-wrapper 
+            border: none // square around each service has missing bottom
+
+        // "more" button
+        .service-btn 
+            text-align: center
+            
+            .button 
+                font-family: 'bignoodletitlingregular', sans-serif
+                height: 40px
+                width: 90px
+                padding: 0
+                margin-top: 50px
+                border-radius: 4px
+
+        button, a 
+            transition: 300ms ease-in 
+        button:hover 
+            background-color: darken($main-theme, 15%)
+
+
+    /* Contacts */
+
+    section#contacts
+        margin-bottom: 70px
+
+        .about
+            animation: highlight-exit 300ms ease-in-out forwards
+            transition: 300ms ease-in-out
+
+            p 
+                font-size: 18px
+            
+            &:hover
+                animation: highlight 300ms ease-in-out forwards
+
+    /* Clients */
+    
+    section#clients 
+        .clients-title
+            font-size: 40px
+            color: $main-theme
+            font-family: 'Big Noodle', serif
+            font-style: normal
+        
+
+    /* Work */
+
+
+    /* Page Footer */
+
+
+
+/* RESPONSIVE DESIGN */
+
+/* Extra Tinkering with Mobile Mode */
+@media only screen and (max-width: 640px) 
+
+    /* center title + logo in mobile mode */
+    // h1 
+    // text-align: center 
+    h1.logo 
+        margin-left: 98px
+        
+        #main-logo 
+            transform: scale(1.8)
+
+    .nav-list 
+        .social-media 
+            margin-top: 25px
+    
+    .social-media 
+        display: none
+
+    #wrapper 
+        
+        section#services 
+
+            .services-container 
+                display: block 
+
+            .service-btn 
+                .button 
+                    display: none 
+
+/* Extra Tinkering with Tablet Mode */
+@media (min-width: 641px) and (max-width: 1249px) 
+
+    /* center title + logo in mobile mode */
+    // h1 
+    // text-align: center 
+    h1.logo 
+        margin-left: 30px
+        
+        #main-logo 
+            transform: scale(1.3)
+    
+    .menu-toggle-button, .menu-toggle-button.active
+        width: 50px
+        border: none 
+        margin-left: 440px
+        color: black
+        transform: scale(1.4)
+
+/* Desktop Mode */ 
+@media (min-width: 1250px) 
+    // temp fix before adding more footer content
+    footer#page-footer
+        height: 420px
+    
+
+/* Animations */
+
+@keyframes mobile-nav 
+    0% 
+        transform: scaleY(0.2)
+        opacity: 0 
+    100% 
+        transform: scaleY(1)
+        opacity: 1
+    
+@keyframes slide-out 
+    0% 
+        transform: translateY(-100px)
+        opacity: 0.1
+    100% 
+        transform: translateY(0)
+
+@keyframes slide-in
+    0% 
+        transform: translateY(0)
+        opacity: 1
+    100% 
+        transform: translateY(-100px)
+        opacity: 0
+
+@keyframes highlight
+    0% 
+        transform: translateY(0)
+    100% 
+        transform: translateY(-10px) 
+
+@keyframes highlight-exit
+    0% 
+        transform: translateY(-10px) 
+    100% 
+        transform: translateY(0) 
+
+
