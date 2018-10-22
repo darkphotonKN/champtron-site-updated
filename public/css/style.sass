@@ -28,39 +28,57 @@
     font-style: normal
 
 // Variables
-$main-theme: #3c6382
+$main-theme: #00fff6 // #3c6382
+$secondary-theme: #fff100
+$main-bg: #3B3D40// original jc: #6B6E73
+$btn-bdr-radius: 15px
+$logo-starting-opacity: 0.3
 
+body
+    // baseline background-color
+    background-color: $main-bg
 
 /* header */
 header 
     /* height of header banner,  */
     background-color: #fff
+    // background-color: rgba(0, 0, 0, 0)
 
-    /* main logo */
-    #main-logo 
-        height: 40px
-        width: 40px
-        display: inline
+    /* main logo / title*/
+
+    section.dark 
+        margin-top: 50px 
 
     #main-title 
         margin-top: 15px
-        transform: scale(1.2)
+        transform: scale(1.25)
         display: inline
+        opacity: $logo-starting-opacity
+
+        &.loaded
+            animation: load-in 2500ms ease-in forwards
 
         .cls-1
             fill: #1A1A1A
+
+    svg#social-media-1, svg#social-media-2, svg#social-media-3, svg#social-media-4, svg#social-media-5
+        margin-bottom: 6px
+
 
     /* navlist adjustment */
     .nav-list 
         margin-top: 11px
 
         /* navlist elements */
-        .menu-list li a 
-            color: #1A1A1A
+        .menu-list li a  
+            // transition: all 1500ms ease-in-out 
+            // #fff
+            color: #1a1a1a
             font-size: 18px
+            letter-spacing: 1px
 
         // social media icons 
-
+ 
         .social-media 
             height: 20px 
             width: 20px
@@ -71,7 +89,7 @@ header
             z-index: 2
 
             &:hover 
-                fill: $main-theme
+                fill: $secondary-theme
 
     
     /* Mobile */
@@ -92,16 +110,30 @@ header
 header.shrink 
     background-color: #fff 
     border-bottom: 1px solid #ccc
+    box-shadow: 0px 1px 10px #999
 
     .menu-toggle-button
         border: none
 
-// Special Fonts 
+
+section#main-slider 
+    // keywords on splash page 
+    .color 
+        color: $secondary-theme
+    .color-2 
+        color: $main-theme
 
 
-#slider 
-    p.lead 
-        font-family: '微软雅黑', sans-serif
+    #slider 
+
+        .slider-caption 
+
+            p.lead 
+                font-size: 23px
+                font-family: '微软雅黑', sans-serif
+
+
+// Special Fonts
 
 .section-desc 
     h4, p 
@@ -111,10 +143,26 @@ span.english-desc
     font-family: 'bignoodletitlingregular', sans-serif
     font-size: 24px 
 
+
+
 ///// MAIN SECTIONS /////
 
 
 // Landing Page
+
+// first fade-into landing page 
+#first-load-overlay 
+    position: absolute
+    top: 0
+    left: 0 
+    height: 100vh 
+    width: 100%
+    background-color: black 
+    z-index: 9979
+    opacity: 0.8
+    animation: first-load 1800ms ease-in-out forwards
+    animation-delay: 1.7s // for initial load time
+    
 #slider 
     .slider-caption
         h2
@@ -122,15 +170,19 @@ span.english-desc
         p 
             font-size: 20px
 
+
 #wrapper
 
-    // /* About */
-    // section#about 
-    //     background-color: #1A1A1A
+    /* About */
+    section#about
+        // background-color: #6B6E73
 
-    //     .section-desc 
-    //         h4, p
-    //             color: #ddd
+        .section-desc 
+            h4 
+                strong
+                    font-weight: normal
+            h4, p
+                color: #E5E5E5
 
 
     /* Projects */
@@ -142,8 +194,6 @@ span.english-desc
             h4, p
                 color: #ddd
                 font-family: '微软雅黑', sans-serif
-            h4 
-                font-size: 18px
             p 
                 font-size: 16px
                 
@@ -159,7 +209,7 @@ span.english-desc
                  
             p  
                 font-family: '微软雅黑', sans-serif
-                font-size: 18px
+                font-size: 16px
         
         // main services showcase
         .services-main 
@@ -203,43 +253,143 @@ span.english-desc
             .button 
                 font-family: 'bignoodletitlingregular', sans-serif
                 height: 40px
-                width: 90px
+                width: 110px
                 padding: 0
                 margin-top: 50px
-                border-radius: 4px
+                border-radius: $btn-bdr-radius
 
         button, a 
+            color: #1a1a1a
+            background-color: $main-theme
             transition: 300ms ease-in 
         button:hover 
             background-color: darken($main-theme, 15%)
 
 
-    /* Contacts */
+    /* Works */
 
-    section#contacts
-        margin-bottom: 70px
+    section#works 
+        // background-color: $main-bg
 
-        .about
-            animation: highlight-exit 300ms ease-in-out forwards
-            transition: 300ms ease-in-out
+        .section-desc 
+            h4, p
+                color: #E5E5E5
 
-            p 
-                font-size: 18px
-            
-            &:hover
-                animation: highlight 300ms ease-in-out forwards
+        a.cbp-lightbox
+            border-radius: $btn-bdr-radius
+            font-family: 'bignoodletitlingregular', sans-serif
+            color: #1a1a1a
+
 
     /* Clients */
     
     section#clients 
+
+        .section-desc
+            p
+                color: #fff 
+                margin: 30px 0
+
+        hr.style-two 
+            border: 0
+            height: 1px
+            background-image: linear-gradient(to right, rgba(255,255,255, 0.3), rgba(255,255,255, 0.3), rgba(0, 0, 0, 0))
+
+        hr.style-three
+            border: 0
+            height: 1px
+            background-image: linear-gradient(to left, rgba(255,255,255, 0.3), rgba(255,255,255, 0.3), rgba(0, 0, 0, 0))
+
         .clients-title
-            font-size: 40px
+            font-size: 50px
             color: $main-theme
-            font-family: 'Big Noodle', serif
+            font-family: 'bignoodletitlingregular', sans-serif
             font-style: normal
         
+        .clients-block, .clients-block-test
+            cursor: all-scroll
+            color: #fff
+            height: 200px
+            width: 100%
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: center
+            align-items: center
 
-    /* Work */
+            p 
+                color: #fff 
+                text-align: center 
+                margin: 0 10px
+                display: inline
+                font-family: '微软雅黑', sans-serif
+                
+                &:hover
+                    color: #eee 
+                    // animation: highlight 400ms ease-in-out forwards 
+            
+                .fa-circle
+                    transform: scale(0.2)
+                    color: #fff
+            
+            &.mobile
+                display: none
+        
+            button.slick-arrow 
+                outline: none
+                background: rgba(0,0,0,0)
+                font-family: 'bignoodletitlingregular', sans-serif
+                margin: 0
+                // height: 10px
+                // width: 10px
+                // // padding: 0
+                // // margin-top: 50px
+                // border-radius: 4px
+
+                &:hover 
+                    // background-color: darken($main-theme, 15%)
+                    color: $main-theme       
+                    transition: 300ms ease-in 
+            
+            .slick-dots 
+                display: none !important
+
+
+        h3.more-than 
+            margin-top: 30px
+            margin-bottom: 30px
+            color: $main-theme
+            font-size: 25px
+            font-family: 'bignoodletitlingregular', sans-serif
+            
+        h3 
+            font-size: 18px
+            font-family: '微软雅黑', sans-serif
+
+
+    /* Contacts */
+
+    section#contacts
+
+        margin-bottom: 70px
+
+        .section-desc 
+            h4, p
+                color: #E5E5E5
+
+        .about
+            color: #E5E5E5
+
+            p 
+                font-size: 18px
+                color: #E5E5E5  
+            
+            &:hover
+                cursor: pointer
+                color: lighten(#E5E5E5, 15%)
+                animation: highlight 300ms ease-in-out forwards
+                transition: 300ms ease-in-out
+    
 
 
     /* Page Footer */
@@ -248,14 +398,17 @@ span.english-desc
 
 /* RESPONSIVE DESIGN */
 
+
 /* Extra Tinkering with Mobile Mode */
 @media only screen and (max-width: 640px) 
 
     /* center title + logo in mobile mode */
     // h1 
     // text-align: center 
-    h1.logo 
-        margin-left: 98px
+    h1.logo-title
+        width: 180px
+        margin-top: 15px
+        margin-left: 73px
         
         #main-logo 
             transform: scale(1.8)
@@ -267,8 +420,13 @@ span.english-desc
     .social-media 
         display: none
 
-    #wrapper 
-        
+    #slider
+        .bg3 
+            background: url(../img/slider/bg_dark.jpg)
+
+
+
+    #wrapper     
         section#services 
 
             .services-container 
@@ -276,15 +434,25 @@ span.english-desc
 
             .service-btn 
                 .button 
-                    display: none 
+                    display: none
+
+        section#clients
+
+            .clients-block 
+                display: none 
+
+                &.mobile 
+                    display: flex 
+
 
 /* Extra Tinkering with Tablet Mode */
 @media (min-width: 641px) and (max-width: 1249px) 
 
     /* center title + logo in mobile mode */
     // h1 
-    // text-align: center 
-    h1.logo 
+    // text-align: center
+
+    h1.logo-title
         margin-left: 30px
         
         #main-logo 
@@ -297,14 +465,29 @@ span.english-desc
         color: black
         transform: scale(1.4)
 
+
 /* Desktop Mode */ 
 @media (min-width: 1250px) 
     // temp fix before adding more footer content
     footer#page-footer
-        height: 420px
+        height: 380px
     
 
+
 /* Animations */
+@keyframes first-load 
+    0% 
+        opacity: 0.8
+    100% 
+        opacity: 0
+
+@keyframes load-in 
+    0% 
+        opacity: $logo-starting-opacity
+        transform: translateY(20px) 
+    100%
+        opacity: 1 
+        transform: translateY(0)
 
 @keyframes mobile-nav 
     0% 
@@ -331,9 +514,10 @@ span.english-desc
 
 @keyframes highlight
     0% 
-        transform: translateY(0)
+        transform: scale(1)
+    
     100% 
-        transform: translateY(-10px) 
+        transform: scale(1.2) translateY(-5px)
 
 @keyframes highlight-exit
     0% 

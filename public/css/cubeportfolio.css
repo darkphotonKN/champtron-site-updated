@@ -35,7 +35,8 @@
 
 .cbp-item {
   float: left;
-  margin-right: 10px; }
+  /* margin-right: 10px;  original setting*/
+}
 
 .cbp-wrapper, .cbp .cbp-item {
   position: absolute;

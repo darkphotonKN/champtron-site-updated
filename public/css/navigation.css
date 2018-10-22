@@ -106,7 +106,7 @@ ul.menu-list li li li>a{} /* Level 3 */
 ul.menu-list>li{margin:0px;border:none;border-bottom:1px solid #eceaea;background:#212121;}
 ul.menu-list>li:last-child{border-bottom:none;}
 ul.menu-list>li>a{}
-ul.menu-list>li:hover{background:#212121}
+ul.menu-list>li:hover{background:#eee}
 ul.menu-list>li:hover>a{color:#fff;}
 ul.menu-list>li>a:hover{}
 /* End First Level*/

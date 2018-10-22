@@ -706,7 +706,7 @@ jQuery(function() {
 		$(this).each(function(){
 			dataperc = $(this).attr("data-perc"),
 				$(this).find(".number").delay(6000).countTo({
-				from: 50,
+				from: 1,
 				to: dataperc,
 				speed: 3000,
 				refreshInterval: 50,
@@ -714,6 +714,14 @@ jQuery(function() {
 			});  
 		});
 	});
+	let block1Val = document.querySelector('#num-1').innerHTML;
+	let block2Val = document.querySelector('#num-2').innerHTML;
+	let block3Val = document.querySelector('#num-3').innerHTML;
+
+	setTimeout(() => block1Val = block1Val + '+', 4000);
+	setTimeout(() => block2Val = block2Val + '+', 4000);
+	setTimeout(() => block3Val = block3Val + '+', 4000);
+
 });
 (function($) {
 	$.fn.countTo = function(options) {
