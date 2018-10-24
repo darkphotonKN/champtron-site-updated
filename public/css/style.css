@@ -19,28 +19,34 @@ body {
 /* header */
 header {
   /* height of header banner,  */
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0);
   /* main logo / title */
+  /* social media icons */
   /* navlist adjustment */
   /* Mobile */ }
   header section.dark {
     margin-top: 50px; }
-  header #main-title {
-    margin-top: 15px;
-    transform: scale(1.25);
-    display: inline;
+  header .logo-title {
     opacity: 0.3; }
-    header #main-title.loaded {
+    header .logo-title #main-title {
+      margin-top: 21px;
+      transform: scale(1.25);
+      display: inline;
+      transition: all 500ms ease-in-out;
+      fill: #fff; }
+    header .logo-title.loaded {
       animation: load-in 2500ms ease-in forwards; }
-    header #main-title .cls-1 {
-      fill: #1A1A1A; }
+  header #social-media-4 {
+    fill: #fff !important; }
+    header #social-media-4 circle {
+      fill: rgba(0, 0, 0, 0); }
   header svg#social-media-1, header svg#social-media-2, header svg#social-media-3, header svg#social-media-4, header svg#social-media-5 {
     margin-bottom: 6px; }
   header .nav-list {
     margin-top: 11px;
     /* navlist elements */ }
     header .nav-list .menu-list li a {
-      color: #1a1a1a;
+      color: #fff;
       font-size: 18px;
       letter-spacing: 1px; }
     header .nav-list .social-media {
@@ -66,9 +72,20 @@ header {
 header.shrink {
   background-color: #fff;
   border-bottom: 1px solid #ccc;
-  box-shadow: 0px 1px 10px #999; }
+  box-shadow: 0px 1px 10px #999;
+  transition: all 500ms ease-in-out; }
+  header.shrink .cls-1, header.shrink .cls-2 {
+    fill: #1a1a1a; }
+  header.shrink .menu-list li a {
+    color: #1a1a1a; }
+  header.shrink li.active a {
+    background-color: #fff100; }
   header.shrink .menu-toggle-button {
     border: none; }
+  header.shrink #social-media-4 circle {
+    fill: #1a1a1a; }
+    header.shrink #social-media-4 circle:hover {
+      color: #00fff6; }
 
 section#main-slider .color {
   color: #fff100; }
@@ -108,13 +125,24 @@ span.english-desc {
   /* Works */
   /* Clients */
   /* Contacts */
+  /* SUB SECTIONS */
+  /* SERVICES INFROMATION */
+  /* Sub Nav */
+  /* Web */
+  /* Artificial Intelligence */
+  /* Kiosk Service */
   /* Page Footer */ }
+  #wrapper section .section-desc h4 strong {
+    font-weight: normal; }
+  #wrapper section .section-desc h4, #wrapper section .section-desc p {
+    color: #E5E5E5; }
   #wrapper section#about .section-desc h4 strong {
     font-weight: normal; }
   #wrapper section#about .section-desc h4, #wrapper section#about .section-desc p {
     color: #E5E5E5; }
   #wrapper section#services {
-    background-color: #1A1A1A; }
+    background-color: #1A1A1A;
+    padding-top: 150px; }
     #wrapper section#services .section-desc h4, #wrapper section#services .section-desc p {
       color: #ddd;
       font-family: "微软雅黑", sans-serif; }
@@ -158,8 +186,14 @@ span.english-desc {
     #wrapper section#services .cbp-item-wrapper {
       border: none; }
     #wrapper section#services .service-btn {
-      text-align: center; }
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      height: 150px; }
       #wrapper section#services .service-btn .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: "bignoodletitlingregular", sans-serif;
         height: 40px;
         width: 110px;
@@ -170,8 +204,8 @@ span.english-desc {
       color: #1a1a1a;
       background-color: #00fff6;
       transition: 300ms ease-in; }
-    #wrapper section#services button:hover {
-      background-color: #00b3ac; }
+      #wrapper section#services button:hover, #wrapper section#services a:hover {
+        background-color: #00b3ac; }
   #wrapper section#works .section-desc h4, #wrapper section#works .section-desc p {
     color: #E5E5E5; }
   #wrapper section#works a.cbp-lightbox {
@@ -183,12 +217,10 @@ span.english-desc {
     margin: 30px 0; }
   #wrapper section#clients hr.style-two {
     border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0)); }
+    height: 1px; }
   #wrapper section#clients hr.style-three {
     border: 0;
-    height: 1px;
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0)); }
+    height: 1px; }
   #wrapper section#clients .clients-title {
     font-size: 50px;
     color: #00fff6;
@@ -250,6 +282,105 @@ span.english-desc {
         color: white;
         animation: highlight 300ms ease-in-out forwards;
         transition: 300ms ease-in-out; }
+  #wrapper #services-nav {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 60px;
+    width: 100%;
+    margin-top: -30px;
+    background-color: #1a1a1a;
+    z-index: 9999;
+    transition: all 500ms ease-in-out; }
+    #wrapper #services-nav.scroll-bar {
+      position: fixed;
+      margin-top: -605px;
+      margin-left: 40%;
+      background-color: rgba(0, 0, 0, 0); }
+    #wrapper #services-nav ul.nav {
+      margin-bottom: 0;
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem; }
+      #wrapper #services-nav ul.nav li.home {
+        color: #fff100; }
+        #wrapper #services-nav ul.nav li.home a {
+          text-decoration: none;
+          color: #fff100; }
+      #wrapper #services-nav ul.nav li {
+        margin-right: 20px;
+        display: inline-block; }
+        #wrapper #services-nav ul.nav li a {
+          text-decoration: none;
+          color: #fff; }
+          #wrapper #services-nav ul.nav li a:hover {
+            transition: all 300m ease-in-out;
+            color: #00fff6; }
+  #wrapper section#web {
+    padding-top: 40px; }
+    #wrapper section#web h2 {
+      color: #00fff6; }
+      #wrapper section#web h2 .web-zh-title {
+        font-family: "微软雅黑", sans-serif;
+        display: block;
+        font-size: 23px; }
+    #wrapper section#web p {
+      font-family: "微软雅黑", sans-serif; }
+    #wrapper section#web h3 {
+      color: #fff;
+      margin-top: 50px; }
+    #wrapper section#web #panel3 ul.wd-list li {
+      font-size: 18px;
+      margin: 6px 0;
+      list-style: none;
+      color: #fff; }
+  #wrapper section#ai .section-desc p, #wrapper section#ai .section-desc h4 {
+    color: #fff; }
+  #wrapper section#ai .section-desc h4 {
+    font-family: "bignoodletitlingregular", sans-serif; }
+  #wrapper section#ai .section-desc p {
+    font-family: "微软雅黑", sans-serif; }
+  #wrapper section#ai #services-container .service i {
+    margin-bottom: 15px;
+    color: #fff; }
+  #wrapper section#ai #services-container .service h5, #wrapper section#ai #services-container .service p {
+    color: #fff;
+    font-family: "bignoodletitlingregular", sans-serif; }
+  #wrapper section#ai #services-container .service h5 {
+    font-size: 20px; }
+  #wrapper section#ai #services-container .service a {
+    width: 80px;
+    border-radius: 15px; }
+    #wrapper section#ai #services-container .service a span {
+      color: #1a1a1a; }
+  #wrapper section#ai h3 {
+    color: #00fff6; }
+  #wrapper section#kiosk {
+    color: #fff; }
+    #wrapper section#kiosk h3 {
+      margin-bottom: 30px; }
+    #wrapper section#kiosk .img-desc {
+      font-family: "微软雅黑", sans-serif; }
+      #wrapper section#kiosk .img-desc h3 {
+        font-family: "微软雅黑", sans-serif;
+        font-size: 22px;
+        color: #fff100; }
+    #wrapper section#kiosk #kiosk-right-img {
+      margin-top: -34px; }
+    #wrapper section#kiosk img#kiosk-usage {
+      margin-top: 30px;
+      height: 200px; }
+    #wrapper section#kiosk .kiosk-count-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      #wrapper section#kiosk .kiosk-count-row .kiosk-count {
+        padding-top: 1.25rem;
+        border-radius: 15px;
+        background-color: #ffffff;
+        color: #1a1a1a; }
 
 /* RESPONSIVE DESIGN */
 /* Extra Tinkering with Mobile Mode */
@@ -271,14 +402,25 @@ span.english-desc {
   #slider .bg3 {
     background: url(../img/slider/bg_dark.jpg); }
 
-  #wrapper section#services .services-container {
-    display: block; }
-  #wrapper section#services .service-btn .button {
-    display: none; }
-  #wrapper section#clients .clients-block {
-    display: none; }
-    #wrapper section#clients .clients-block.mobile {
-      display: flex; } }
+  #wrapper {
+    /* home page */
+    /* services page */ }
+    #wrapper section#services .services-container {
+      display: block; }
+    #wrapper section#services .service-btn .button {
+      display: none; }
+    #wrapper section#clients .clients-block {
+      display: none; }
+      #wrapper section#clients .clients-block.mobile {
+        display: flex; }
+    #wrapper #services-nav ul.nav.scroll {
+      margin-left: 0;
+      margin-top: -40px;
+      justify-content: left; }
+    #wrapper section#kiosk img#kiosk-usage {
+      display: none; }
+    #wrapper section#kiosk #kiosk-right-img {
+      margin-top: 20px; } }
 /* Extra Tinkering with Tablet Mode */
 @media (min-width: 641px) and (max-width: 1249px) {
   /* center title + logo in mobile mode */
@@ -306,10 +448,10 @@ span.english-desc {
 @keyframes load-in {
   0% {
     opacity: 0.3;
-    transform: translateY(20px); }
+    transform: translateY(23px); }
   100% {
     opacity: 1;
-    transform: translateY(0); } }
+    transform: translateY(5); } }
 @keyframes mobile-nav {
   0% {
     transform: scaleY(0.2);

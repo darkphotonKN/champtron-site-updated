@@ -114,7 +114,7 @@ function scrollMenu() {
 // init
 $(document).ready(() => {
     $('#home-nav-item').addClass('active');
-    setTimeout(() => $('#main-title').addClass('loaded'), 300);
+    setTimeout(() => $('.logo-title').addClass('loaded'), 300);
     //serviceToggle();
     scrollMenu();
     clientsCarousel();

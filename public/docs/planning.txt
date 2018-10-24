@@ -1,0 +1,28 @@
+
+
+
+Home - Services 
+    |
+  Button 
+    |
+  New Standalone Page (Services) 
+
+
+Menu:
+
+Same Nav? 
+
+Sub Nav 
+
+
+Sections:
+
+Team Tech
+
+Web
+
+AI
+
+Native, Mobile (Android / iOS)
+
+Kiosk 

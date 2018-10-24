@@ -71,14 +71,17 @@ section {
 
 section.dark {
     background: url(../img/black_lozenge.png) #212121;
-    padding: 50px 0px;
+    padding-top: 140px;
+    padding-bottom: 100px;
+    padding-left: 0;
+    padding-right: 0;
     position: relative;
     z-index: 10;
 }
 
 section#slider-banner {
     height: 400px;
-    padding: 0px;
+    padding: 0px;1
 }
 
 footer {
@@ -1203,14 +1206,14 @@ section#blog {
 }
 
 .blog-header_detail {
-    background: url(../img/blog/placeholder_big.jpg) no-repeat center center;
+    background: url(../img/slider/bg_dark.jpg) no-repeat center center;
     min-height: 500px;
     padding-top: 300px;
     position: relative;
 }
 
 .blog-header {
-    background: url(../img/blog/placeholder_big.jpg) no-repeat center center;
+    background: url(../img/slider/bg_dark.jpg) no-repeat center center;
     min-height: 500px;
     padding-top: 300px;
     position: relative;

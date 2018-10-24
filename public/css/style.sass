@@ -41,25 +41,32 @@ body
 /* header */
 header 
     /* height of header banner,  */
-    background-color: #fff
-    // background-color: rgba(0, 0, 0, 0)
+    //background-color: #fff
+    background-color: rgba(0, 0, 0, 0)
 
     /* main logo / title*/
 
     section.dark 
         margin-top: 50px 
 
-    #main-title 
-        margin-top: 15px
-        transform: scale(1.25)
-        display: inline
+    .logo-title
         opacity: $logo-starting-opacity
+
+        #main-title 
+            margin-top: 21px
+            transform: scale(1.25)
+            display: inline
+            transition: all 500ms ease-in-out
+            fill: #fff
 
         &.loaded
             animation: load-in 2500ms ease-in forwards
 
-        .cls-1
-            fill: #1A1A1A
+    /* social media icons */
+    #social-media-4 
+        fill: #fff!important 
+        circle 
+            fill: rgba(0,0,0,0)
 
     svg#social-media-1, svg#social-media-2, svg#social-media-3, svg#social-media-4, svg#social-media-5
         margin-bottom: 6px
@@ -73,7 +80,7 @@ header
         .menu-list li a  
             // transition: all 1500ms ease-in-out 
             // #fff
-            color: #1a1a1a
+            color: #fff
             font-size: 18px
             letter-spacing: 1px
 
@@ -111,10 +118,29 @@ header.shrink
     background-color: #fff 
     border-bottom: 1px solid #ccc
     box-shadow: 0px 1px 10px #999
+    transition: all 500ms ease-in-out
+
+    // main logo and nav list elements color switching 
+    .cls-1, .cls-2, 
+        fill: #1a1a1a
+
+    .menu-list li a
+        color: #1a1a1a
+
+    li.active a 
+        background-color: #fff100
 
     .menu-toggle-button
         border: none
 
+
+    #social-media-4  
+        circle 
+            fill: #1a1a1a
+
+            &:hover 
+                color: $main-theme
+                
 
 section#main-slider 
     // keywords on splash page 
@@ -173,6 +199,15 @@ span.english-desc
 
 #wrapper
 
+    section 
+        .section-desc 
+            h4 
+                strong
+                    font-weight: normal
+            h4, p
+                color: #E5E5E5
+
+
     /* About */
     section#about
         // background-color: #6B6E73
@@ -189,6 +224,7 @@ span.english-desc
 
     section#services 
         background-color: #1A1A1A
+        padding-top: 150px
 
         .section-desc
             h4, p
@@ -247,23 +283,32 @@ span.english-desc
             border: none // square around each service has missing bottom
 
         // "more" button
-        .service-btn 
+        .service-btn  
+            display: flex
+            justify-content: center            
             text-align: center
+            height: 150px   
             
             .button 
+                display: flex
+                justify-content: center
+                align-items: center      
                 font-family: 'bignoodletitlingregular', sans-serif
                 height: 40px
                 width: 110px
                 padding: 0
                 margin-top: 50px
                 border-radius: $btn-bdr-radius
+                
+                
 
         button, a 
+
             color: #1a1a1a
             background-color: $main-theme
             transition: 300ms ease-in 
-        button:hover 
-            background-color: darken($main-theme, 15%)
+            &:hover
+                background-color: darken($main-theme, 15%)
 
 
     /* Works */
@@ -293,12 +338,12 @@ span.english-desc
         hr.style-two 
             border: 0
             height: 1px
-            background-image: linear-gradient(to right, rgba(255,255,255, 0.3), rgba(255,255,255, 0.3), rgba(0, 0, 0, 0))
+            // background-image: linear-gradient(to right, rgba(255,255,255, 0.3), rgba(255,255,255, 0.3), rgba(0, 0, 0, 0))
 
         hr.style-three
             border: 0
             height: 1px
-            background-image: linear-gradient(to left, rgba(255,255,255, 0.3), rgba(255,255,255, 0.3), rgba(0, 0, 0, 0))
+            // background-image: linear-gradient(to left, rgba(255,255,255, 0.3), rgba(255,255,255, 0.3), rgba(0, 0, 0, 0))
 
         .clients-title
             font-size: 50px
@@ -392,6 +437,166 @@ span.english-desc
     
 
 
+    /* SUB SECTIONS */
+
+
+    /* SERVICES INFROMATION */
+    
+    /* Sub Nav */
+    #services-nav 
+        display: flex 
+        align-items: center
+        justify-content: right
+        height: 60px
+        width: 100%
+        margin-top: -30px
+        background-color: #1a1a1a
+        z-index: 9999
+        transition: all 500ms ease-in-out 
+
+        &.scroll-bar 
+            position: fixed
+            margin-top: -605px
+            margin-left: 40%
+            background-color: rgba(0,0,0,0)
+
+        ul.nav 
+            margin-bottom: 0
+            margin-left: 0
+            display: flex 
+            align-items: center 
+            justify-content: center
+            font-size: 1.15rem
+            
+            li.home 
+                color: $secondary-theme
+
+                a 
+                    text-decoration: none 
+                    color: $secondary-theme
+
+            
+            li 
+                margin-right: 20px
+                display: inline-block
+
+                a 
+                    text-decoration: none 
+                    color: #fff
+                    
+
+                    &:hover 
+                        transition: all 300m ease-in-out
+                        color: $main-theme
+
+
+    /* Web */
+    
+    section#web 
+        padding-top: 40px
+
+        h2 
+            color: $main-theme
+
+            .web-zh-title
+                font-family: '微软雅黑', sans-serif
+                display: block
+                font-size: 23px 
+        p
+            font-family: '微软雅黑', sans-serif
+
+        h3
+            color: #fff 
+            margin-top: 50px
+
+        #panel3
+            ul.wd-list 
+                
+                li 
+                    font-size: 18px
+                    margin: 6px 0
+                    list-style: none
+                    color: #fff
+
+    
+    /* Artificial Intelligence */
+    
+    section#ai
+        .section-desc
+            p, h4 
+                color: #fff
+            h4 
+                font-family: 'bignoodletitlingregular', sans-serif
+            p  
+                font-family: '微软雅黑', sans-serif
+
+        #services-container 
+            .service 
+                i 
+                    margin-bottom: 15px
+                    color: #fff
+                h5, p
+                    color: #fff
+                    font-family: 'bignoodletitlingregular', sans-serif
+                
+                h5 
+                    font-size: 20px
+                
+                // button 
+                a 
+                    width: 80px
+                    border-radius: $btn-bdr-radius
+                    span
+                        color: #1a1a1a
+            
+
+        h3 
+            color: $main-theme
+
+
+
+    section#security
+
+
+    /* Kiosk Service */
+    
+    section#kiosk 
+        color: #fff
+
+        h3 
+            margin-bottom: 30px
+
+        .img-desc   
+            // padding-top: 100px
+            font-family: '微软雅黑', sans-serif
+
+            h3 
+                font-family: '微软雅黑', sans-serif
+                font-size: 22px
+                color: $secondary-theme
+            p 
+
+        #kiosk-right-img
+            margin-top: -34px
+
+        img#kiosk-usage 
+            margin-top: 30px
+            height: 200px
+
+        .kiosk-count-row 
+            display: flex
+            flex-direction: row
+            align-items: center
+
+            .kiosk-count 
+                padding-top: 1.25rem
+                border-radius: $btn-bdr-radius
+                background-color: #ffffff
+                color: #1a1a1a
+
+
+
+
     /* Page Footer */
 
 
@@ -426,7 +631,9 @@ span.english-desc
 
 
 
-    #wrapper     
+    #wrapper
+        /* home page */
+
         section#services 
 
             .services-container 
@@ -443,6 +650,24 @@ span.english-desc
 
                 &.mobile 
                     display: flex 
+
+
+        /* services page */ 
+
+        // nav 
+        #services-nav
+            ul.nav
+                &.scroll                     
+                    margin-left: 0
+                    margin-top: -40px
+                    justify-content: left 
+
+        section#kiosk
+            img#kiosk-usage 
+                display: none
+
+            #kiosk-right-img 
+                margin-top: 20px
 
 
 /* Extra Tinkering with Tablet Mode */
@@ -484,10 +709,10 @@ span.english-desc
 @keyframes load-in 
     0% 
         opacity: $logo-starting-opacity
-        transform: translateY(20px) 
+        transform: translateY(23px) 
     100%
         opacity: 1 
-        transform: translateY(0)
+        transform: translateY(5)
 
 @keyframes mobile-nav 
     0% 
