@@ -130,8 +130,7 @@ span.english-desc {
   /* Sub Nav */
   /* Web */
   /* Artificial Intelligence */
-  /* Kiosk Service */
-  /* Page Footer */ }
+  /* Kiosk Service */ }
   #wrapper section .section-desc h4 strong {
     font-weight: normal; }
   #wrapper section .section-desc h4, #wrapper section .section-desc p {
@@ -342,6 +341,9 @@ span.english-desc {
     font-family: "bignoodletitlingregular", sans-serif; }
   #wrapper section#ai .section-desc p {
     font-family: "微软雅黑", sans-serif; }
+    #wrapper section#ai .section-desc p span {
+      font-size: 20px;
+      font-family: "bignoodletitlingregular", sans-serif; }
   #wrapper section#ai #services-container .service i {
     margin-bottom: 15px;
     color: #fff; }
@@ -357,6 +359,15 @@ span.english-desc {
       color: #1a1a1a; }
   #wrapper section#ai h3 {
     color: #00fff6; }
+  #wrapper section#security {
+    font-family: "微软雅黑", sans-serif; }
+    #wrapper section#security p span {
+      font-size: 20px;
+      font-family: "bignoodletitlingregular", sans-serif; }
+    #wrapper section#security ul {
+      color: #fff; }
+      #wrapper section#security ul li {
+        list-style: none; }
   #wrapper section#kiosk {
     color: #fff; }
     #wrapper section#kiosk h3 {
@@ -381,6 +392,11 @@ span.english-desc {
         border-radius: 15px;
         background-color: #ffffff;
         color: #1a1a1a; }
+
+.ai-subsection {
+  /* Page Footer */ }
+  .ai-subsection h4 {
+    font-weight: bold; }
 
 /* RESPONSIVE DESIGN */
 /* Extra Tinkering with Mobile Mode */
