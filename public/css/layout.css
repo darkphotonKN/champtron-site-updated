@@ -1213,7 +1213,8 @@ section#blog {
 }
 
 .blog-header {
-    background: url(../img/slider/bg_dark.jpg) no-repeat center center;
+    background: url(../img/slider/bg_main.jpg) no-repeat center center;
+    background-size: cover;
     min-height: 500px;
     padding-top: 300px;
     position: relative;

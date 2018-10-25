@@ -33,6 +33,7 @@ $secondary-theme: #fff100
 $main-bg: #3B3D40// original jc: #6B6E73
 $btn-bdr-radius: 15px
 $logo-starting-opacity: 0.3
+$serv-nav-opac: 0.3 // starting opacity of services navbar
 
 body
     // baseline background-color
@@ -40,7 +41,7 @@ body
 
 /* header */
 header 
-    /* height of header banner,  */
+    /* height of header banner,  */ 
     //background-color: #fff
     background-color: rgba(0, 0, 0, 0)
 
@@ -128,7 +129,7 @@ header.shrink
         color: #1a1a1a
 
     li.active a 
-        background-color: #fff100
+        background-color: darken(#fff100, 2%)
 
     .menu-toggle-button
         border: none
@@ -443,6 +444,7 @@ span.english-desc
     /* SERVICES INFROMATION */
     
     /* Sub Nav */
+
     #services-nav 
         display: flex 
         align-items: center
@@ -452,9 +454,12 @@ span.english-desc
         margin-top: -30px
         background-color: #1a1a1a
         z-index: 9999
-        transition: all 500ms ease-in-out 
+        opacity: 1
+        // transition: opacity 800ms ease-in-out 
+        
 
         &.scroll-bar 
+            animation: services-nav 400ms ease-in-out forwards 
             position: fixed
             margin-top: -605px
             margin-left: 40%
@@ -469,11 +474,15 @@ span.english-desc
             font-size: 1.15rem
             
             li.home 
-                color: $secondary-theme
-
-                a 
+                // color: $secondary-theme
+                text-decoration: none 
+                color: gray
+                opacity: 1  
+                
+                a
                     text-decoration: none 
-                    color: $secondary-theme
+                    color: gray
+                     
 
             
             li 
@@ -494,6 +503,9 @@ span.english-desc
     
     section#web 
         padding-top: 40px
+
+        i 
+            margin-bottom: 15px
 
         h2 
             color: $main-theme
@@ -518,6 +530,17 @@ span.english-desc
                     list-style: none
                     color: #fff
 
+
+    
+    /* Native Mobile */
+    section#native
+
+        h4 
+            span 
+                font-family: 'bignoodletitlingregular', sans-serif
+                font-size: 25px
+
+                
     
     /* Artificial Intelligence */
     
@@ -558,6 +581,8 @@ span.english-desc
 
 
 
+    /* Security */
+
     section#security
         font-family: '微软雅黑', sans-serif
 
@@ -565,11 +590,57 @@ span.english-desc
             span 
                 font-size: 20px
                 font-family: 'bignoodletitlingregular', sans-serif
+        
+        // information blocks
 
-        ul 
+        ul.sec-block
+            display: flex 
+            flex-direction: column
+            justify-content: center 
+            align-items: center
+            padding: 10px
+            height: 240px
+            border-radius: $btn-bdr-radius 
+            margin: -20px 0
             color: #fff
+            background-color: #1a1a1a
+
+            li:first-child
+                list-style: none
+                font-family: '微软雅黑', sans-serif
+                font-size: 16px
+                font-weight: bold 
+                color: $main-theme// $secondary-theme
+                // english
+                span 
+                    font-size: 25px
+                    font-family: 'bignoodletitlingregular', sans-serif
+
             li 
                 list-style: none 
+
+            &.block-1,  &.block-3
+                li:first-child 
+                    position: absolute 
+                    top: 4%
+                    right: -15%
+            
+            &.block-2, &.block-4
+                li:first-child 
+                    position: absolute 
+                    top: 4%
+                    left: -15%
+
+            &.block-1
+                margin-top: 70px // section area height balancing
+
+            &.block-2
+
+            &.block-3
+
+            &.block-4
+                margin-bottom: -60px // section area height balancing   
+
 
     /* Kiosk Service */
     
@@ -587,14 +658,22 @@ span.english-desc
                 font-family: '微软雅黑', sans-serif
                 font-size: 22px
                 color: $secondary-theme
+                
+                // english 
+                span 
+                    font-size: 24px
+                    font-family: 'bignoodletitlingregular', sans-serif
             p 
 
         #kiosk-right-img
-            margin-top: -34px
+            margin-top: -50px
+            img 
+                border-radius: $btn-bdr-radius
 
         img#kiosk-usage 
             margin-top: 30px
             height: 200px
+            border-radius: $btn-bdr-radius
 
         .kiosk-count-row 
             display: flex
@@ -602,11 +681,23 @@ span.english-desc
             align-items: center
 
             .kiosk-count 
-                padding-top: 1.25rem
-                border-radius: $btn-bdr-radius
-                background-color: #ffffff
-                color: #1a1a1a
 
+                .kiosk-info 
+                    padding-top: 1.25rem
+                    border-radius: $btn-bdr-radius
+                    background-color: #ffffff
+                    color: #1a1a1a
+
+                    p:nth-child(1) 
+                        border-bottom: 0.7px solid black
+                        height: 50px
+
+                    p:nth-child(2) 
+                        border-bottom: 0.7px solid black
+                        height: 50px
+
+                    p:nth-child(3) 
+                        height: 40px
 
 
 .ai-subsection
@@ -673,8 +764,10 @@ span.english-desc
         // nav 
         #services-nav
             ul.nav
+                margin-left: 1.1rem 
+                
                 &.scroll                     
-                    margin-left: 0
+                    margin-left: -56px
                     margin-top: -40px
                     justify-content: left 
 
@@ -685,7 +778,31 @@ span.english-desc
             #kiosk-right-img 
                 margin-top: 20px
 
+        section#security 
+            
+            ul.sec-block
+                
+                li 
+                    list-style: none 
 
+                &.block-1,  &.block-3
+                    li:first-child 
+                        position: relative 
+                        top: 0
+                        right: 0
+                
+                &.block-2, &.block-4
+                    li:first-child 
+                        position: relative 
+                        top: 0
+                        left: 0
+
+                &.block-1
+                    margin-top: 0
+                &.block-4
+                    margin-bottom: 0
+                    
+   
 /* Extra Tinkering with Tablet Mode */
 @media (min-width: 641px) and (max-width: 1249px) 
 
@@ -706,6 +823,34 @@ span.english-desc
         color: black
         transform: scale(1.4)
 
+    #wrapper 
+
+        // services sections 
+
+        section#security 
+            
+            ul.sec-block
+
+                li 
+                    list-style: none 
+
+                &.block-1,  &.block-3
+                    li:first-child 
+                        position: relative 
+                        top: 0
+                        right: 0
+                
+                &.block-2, &.block-4
+                    li:first-child 
+                        position: relative 
+                        top: 0
+                        left: 0
+
+                &.block-1
+                    margin-top: 0
+                &.block-4
+                    margin-bottom: 0
+
 
 /* Desktop Mode */ 
 @media (min-width: 1250px) 
@@ -716,6 +861,7 @@ span.english-desc
 
 
 /* Animations */
+
 @keyframes first-load 
     0% 
         opacity: 0.8
@@ -766,4 +912,11 @@ span.english-desc
     100% 
         transform: translateY(0) 
 
+@keyframes services-nav
+    0% 
+        opacity: $serv-nav-opac
+        transform: scaleY(0.1)
+    100% 
+        opacity: 1
+        transform: scaleY(1)
 
