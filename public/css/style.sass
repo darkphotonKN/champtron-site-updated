@@ -521,6 +521,11 @@ span.english-desc
             color: #fff 
             margin-top: 50px
 
+        ul 
+            li 
+                font-family: '微软雅黑', sans-serif 
+
+
         #panel3
             ul.wd-list 
                 
@@ -717,25 +722,44 @@ span.english-desc
     /* center title + logo in mobile mode */
     // h1 
     // text-align: center 
-    h1.logo-title
-        width: 180px
-        margin-top: 15px
-        margin-left: 73px
+    header 
+
+        h1.logo-title
+            width: 180px
+            margin-top: 15px
+            margin-left: 73px
+            
+            #main-logo 
+                transform: scale(1.8)
+
+        .nav-list 
+            .social-media 
+                margin-top: 25px
         
-        #main-logo 
-            transform: scale(1.8)
-
-    .nav-list 
         .social-media 
-            margin-top: 25px
-    
-    .social-media 
-        display: none
+            display: none
 
-    #slider
-        .bg3 
-            background: url(../img/slider/bg_dark.jpg)
+        #slider
+            .bg3 
+                background: url(../img/slider/bg_dark.jpg)
+        
 
+        // mobile nav menu 
+        .menu-toggle-button 
+            i
+                color: #fff
+
+        .nav-list 
+
+            .menu-list 
+                li 
+                    a
+                        color: #1a1a1a 
+        &.shrink 
+        // mobile nav menu 
+        .menu-toggle-button 
+            i
+                color: #1a1a1a
 
 
     #wrapper
@@ -746,9 +770,9 @@ span.english-desc
             .services-container 
                 display: block 
 
-            .service-btn 
-                .button 
-                    display: none
+            // .service-btn 
+            //     .button 
+            //         display: none
 
         section#clients
 
@@ -765,7 +789,7 @@ span.english-desc
         #services-nav
             ul.nav
                 margin-left: 1.1rem 
-                
+
                 &.scroll                     
                     margin-left: -56px
                     margin-top: -40px
@@ -781,6 +805,7 @@ span.english-desc
         section#security 
             
             ul.sec-block
+                margin: 20px
                 
                 li 
                     list-style: none 
