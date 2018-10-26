@@ -197,8 +197,15 @@ span.english-desc
         p 
             font-size: 20px
 
+// other 
+div.cbd-popup-close 
+    transform: translateY(10px) // adjust close icon 
 
 #wrapper
+
+    
+
+    // general sections
 
     section 
         .section-desc 
@@ -439,7 +446,8 @@ span.english-desc
 
 
     /* SUB SECTIONS */
-
+    .color-secondary 
+        color: $secondary-theme
 
     /* SERVICES INFROMATION */
     
@@ -517,9 +525,10 @@ span.english-desc
         p
             font-family: '微软雅黑', sans-serif
 
-        h3
-            color: #fff 
+        h3.subsection-title
+            color: $secondary-theme
             margin-top: 50px
+            margin-bottom: 20px
 
         ul 
             li 
@@ -550,6 +559,9 @@ span.english-desc
     /* Artificial Intelligence */
     
     section#ai
+        .title-section 
+            margin-bottom: 40px
+
         .section-desc
             p, h4 
                 color: #fff
@@ -602,7 +614,7 @@ span.english-desc
             display: flex 
             flex-direction: column
             justify-content: center 
-            align-items: center
+
             padding: 10px
             height: 240px
             border-radius: $btn-bdr-radius 
@@ -620,21 +632,30 @@ span.english-desc
                 span 
                     font-size: 25px
                     font-family: 'bignoodletitlingregular', sans-serif
+            
+            li:nth-child(2)
+                color: $secondary-theme
+                border-bottom: 1px solid #fff
+                width: 170px
+                padding: 8px 0
+                margin-top: 25px 
+                margin-bottom: 10px
 
             li 
                 list-style: none 
+                margin-left: 10%
 
             &.block-1,  &.block-3
                 li:first-child 
                     position: absolute 
                     top: 4%
-                    right: -15%
+                    right: -7%
             
             &.block-2, &.block-4
                 li:first-child 
                     position: absolute 
                     top: 4%
-                    left: -15%
+                    left: -17%
 
             &.block-1
                 margin-top: 70px // section area height balancing
@@ -810,6 +831,11 @@ span.english-desc
                 li 
                     list-style: none 
 
+                li:nth-child(2)
+                    padding: 3px 0
+                    margin-top: 0
+                    margin-bottom: 0
+
                 &.block-1,  &.block-3
                     li:first-child 
                         position: relative 
@@ -855,9 +881,15 @@ span.english-desc
         section#security 
             
             ul.sec-block
-
+                margin: 20px
+                
                 li 
                     list-style: none 
+
+                li:nth-child(2)
+                    padding: 3px 0
+                    margin-top: 0
+                    margin-bottom: 0
 
                 &.block-1,  &.block-3
                     li:first-child 
